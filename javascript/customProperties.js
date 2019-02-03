@@ -8,6 +8,8 @@ function custom(sortingProperties, idForElement) {
     rating = "NOT FOUND";
     color = "blue";
 
+    temp.innerHTML = "";
+
     for (i = 0; i < sortingProperties.length; i++) {
         sortingProperties[i] = sortingProperties[i].trim();
         //first edit the titles and stuff
@@ -73,9 +75,8 @@ function custom(sortingProperties, idForElement) {
         }
         
 
-        
-
-        element = '<div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5"> <div class="card"> <div class="pricing-list"> <div class="prc-head"> <h4 style="color:'+ color + '">' + callName + '</h4> </div> <div class="prc-list" style="background-color:'+ color + '"> <ul> <li><h1>' + dataValue + '</h1></li> <li><h6> ' + units + ' </h6></li> </ul>     <br><br>    <button type="button" class="btn btn-lg btn-primary mb-3 mr-1" data-container="body" data-toggle="popover" title="" data-placement="bottom" data-html="true" data-content="'+ buttonInfo +  ' " data-original-title="Ranges" aria-describedby="popover16043">More Info</button></div> </div> </div> </div> ';
+        //element = '<div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5"> <div class="card"> <div class="pricing-list"> <div class="prc-head"> <h4 style="color:'+ color + '; -webkit-transition: background-color 200ms linear; -ms-transition: background-color 200ms linear; transition: background-color 200ms linear; }">' + callName + '</h4> </div> <div class="prc-list" style="background-color:'+ color + '"> <ul> <li><h1>' + dataValue + '</h1></li> <li><h6> ' + units + ' </h6></li> </ul>     <br><br>    <button type="button" class="btn btn-lg btn-primary mb-3 mr-1" data-container="body" data-toggle="popover" title="" data-placement="bottom" data-html="true" data-content="'+ buttonInfo +  ' " data-original-title="Ranges" aria-describedby="popover16043">More Info</button></div> </div> </div> </div> ';
+        element = '<div class="col-xl-3 col-ml-6 col-mdl-4 col-sm-6 mt-5"> <div class="card"> <div class="pricing-list"> <div class="prc-head"> <h4 style="color:'+ color + '; -webkit-transition: background-color 200ms linear; -ms-transition: background-color 200ms linear; transition: background-color 200ms linear; }">' + callName + '</h4> </div> <div class="prc-list" style="background-color:'+ color + '"> <ul> <li><h1>' + dataValue + '</h1></li> <li><h6> ' + units + ' </h6></li> </ul>     <br><br>    </div> </div> </div> </div> ';
 
     
         temp.innerHTML += element;

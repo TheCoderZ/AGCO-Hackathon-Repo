@@ -25,6 +25,8 @@
 
                                                                 <script src="javascript/data.js"></script>
                                                                 <script src="javascript/testData.js"></script>
+                                                                <script src="javascript/dataRandomizer.js"></script>
+
                                                                 <script src="javascript/customProperties.js"></script>
                                                                 <script src="javascript/analyzer.js"></script>
 
@@ -307,6 +309,33 @@
 
                         <script>
 
+                        
+function onReady(arrayVal) {
+
+doSome(arrayVal);
+
+
+var numberOfTimes = 50;
+delay = 5000;
+
+for (let i = 0; i < numberOfTimes; i++) {
+    setTimeout( doSome, delay * i);
+}
+
+}
+
+
+function doSome(arrayVal) {
+
+if (randomizeData() == true) {
+    custom(arrayVal, "rowInformation");
+
+}
+
+
+}
+
+                        
                             function submitInput() {
 
                                 input = document.getElementById("inputForCustom").value;
@@ -317,10 +346,20 @@
                                 var element = document.getElementById("inputForm");
                                 element.parentNode.removeChild(element);
 
+                                
+
                                 custom(array, "rowInformation")
 
+                                //onReady(array)
+
                             }
+                        
                             
+                            
+
+
+
+
                             </script>
 
                         <div class="" style="width:100%;" id = "inputForm">

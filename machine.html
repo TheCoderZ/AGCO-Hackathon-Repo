@@ -20,15 +20,22 @@
     <link rel="stylesheet" href="assets/css/default-css.css">
     <link rel="stylesheet" href="assets/css/styles.css">
     <link rel="stylesheet" href="assets/css/responsive.css">
+
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+
     <!-- modernizr css -->
     <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="javascript/data.js"></script>
     <script src="javascript/testData.js"></script>
+    <script src="javascript/dataRandomizer.js"></script>
     <script src="javascript/customProperties.js"></script>
     <script src="javascript/analyzer.js"></script>
+
+    
 </head>
 
-<body>
+<body onload = "onReady()">
     <!--[if lt IE 8]>
             <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
         <![endif]-->
@@ -281,8 +288,39 @@
             <div class="main-content-inner">
                 <!-- color pricing start -->
                 <div class="row" id ="rowInformation">
+
+    
                     
-                <script>custom(["MACHINE_PITCH", "MACHINE_ROLL", "VEHICLE_SPEED", "SAT_SIGNAL", "ROTOR_SPEED", "FUEL_LEVEL", "FUEL_TOTAL"], "rowInformation")</script>
+                <script>
+                    
+                    function onReady() {
+
+                        doSome();
+
+                        
+                        var numberOfTimes = 50;
+                        delay = 1000;
+
+                        for (let i = 0; i < numberOfTimes; i++) {
+                            setTimeout( doSome, delay * i);
+                        }
+                        
+                    }
+
+                    
+                    function doSome() {
+                   
+                        if (randomizeData() == true) {
+                            custom(["MACHINE_PITCH", "MACHINE_ROLL", "VEHICLE_SPEED", "SAT_SIGNAL", "ROTOR_SPEED", "FUEL_LEVEL", "FUEL_TOTAL"], "rowInformation")
+
+                        }
+
+        
+                    }
+
+                    
+                    
+                    </script>
                     
                     
                 </div>

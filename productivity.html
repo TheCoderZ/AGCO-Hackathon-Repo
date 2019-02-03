@@ -24,11 +24,13 @@
                                                                 <script src="assets/js/vendor/modernizr-2.8.3.min.js"></script>
     <script src="javascript/data.js"></script>
     <script src="javascript/testData.js"></script>
+    <script src="javascript/dataRandomizer.js"></script>
+
     <script src="javascript/customProperties.js"></script>
     <script src="javascript/analyzer.js"></script>
                                                                 </head>
     
-    <body>
+    <body onload = "onReady()">
         <!--[if lt IE 8]>
          <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
          <![endif]-->
@@ -282,8 +284,36 @@
                     <!-- color pricing start -->
                     
                     <div class="row" id ="rowInformation">
-                    
-                            <script>custom(["FUEL_RATE", "COVERAGE_RATE_INSTANTANEOUS", "ENGINE_COOLANT_TEMP", "YIELD_AVERAGE", "AREA_TOTAL", "BROKEN_GRAIN_ACTUAL"], "rowInformation")</script>
+
+                            <script>
+
+                            function onReady() {
+
+doSome();
+
+
+var numberOfTimes = 50;
+delay = 5000;
+
+for (let i = 0; i < numberOfTimes; i++) {
+setTimeout( doSome, delay * i);
+}
+
+}
+
+
+function doSome() {
+
+if (randomizeData() == true) {
+    custom(["FUEL_RATE", "COVERAGE_RATE_INSTANTANEOUS", "ENGINE_COOLANT_TEMP", "YIELD_AVERAGE", "AREA_TOTAL", "BROKEN_GRAIN_ACTUAL"], "rowInformation");
+
+}
+
+
+}
+
+</script>
+                       
                                 
                                 
                             </div>
